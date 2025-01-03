@@ -168,10 +168,8 @@ public class PipelineManager {
      * Show an alert that inform the user to select the appropriate screen for recording
      */
     private static void showChooseDisplayAlert() {
-        DisplayManager displayManager = new DisplayManager();
-        String displayName = displayManager.getDisplayName(MainSingleton.getInstance().whoAmI - 1);
-        MainSingleton.getInstance().guiManager.showAlert(Constants.FIREFLY_LUCIFERIN, CommonUtility.getWord(Constants.WAYLAND_SCREEN_REC_PERMISSION).replace("{0}", displayName),
-                CommonUtility.getWord(Constants.WAYLAND_SCREEN_REC_PERMISSION_CONTEXT).replace("{0}", displayName), Alert.AlertType.INFORMATION);
+        MainSingleton.getInstance();
+        CommonUtility.sleepMilliseconds(200);
     }
 
     /**
