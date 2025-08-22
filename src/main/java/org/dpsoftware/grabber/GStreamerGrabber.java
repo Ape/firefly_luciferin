@@ -90,6 +90,9 @@ public class GStreamerGrabber extends JComponent {
     public GStreamerGrabber(AppSink appsink) {
         this.videosink = appsink;
         videosink.set(Constants.EMIT_SIGNALS, true);
+        videosink.set("sync", false);
+        videosink.set("max-buffers", 1);
+        videosink.set("drop", true);
         AppSinkListener listener = new AppSinkListener();
         videosink.connect(listener);
         String gstreamerPipeline;
