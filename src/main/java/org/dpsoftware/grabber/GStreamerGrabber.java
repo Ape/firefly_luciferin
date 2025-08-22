@@ -513,6 +513,8 @@ public class GStreamerGrabber extends JComponent {
             if (bb != null) {
                 rgbFrame(w, h, bb.asIntBuffer());
                 buffer.unmap();
+            } else {
+                log.debug("Appsink buffer not mappable");
             }
             sample.dispose();
             return FlowReturn.OK;
