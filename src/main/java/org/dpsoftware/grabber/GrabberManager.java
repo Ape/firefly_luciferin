@@ -119,7 +119,7 @@ public class GrabberManager {
                         log.info("Restarting pipeline");
                         GrabberSingleton.getInstance().pipe.stop();
                         restartCounter.getAndIncrement();
-                        if (restartCounter.get() >= Constants.MAX_PIPELINE_RESTARTS) {
+                        if (false && restartCounter.get() >= Constants.MAX_PIPELINE_RESTARTS) {
                             log.error("Pipeline restarted too many times, restarting...");
                             NativeExecutor.restartNativeInstanceWithCurrentProfile();
                         }
