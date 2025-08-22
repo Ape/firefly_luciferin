@@ -136,7 +136,7 @@ public class GrabberManager {
                                 bin = Gst.parseBinFromDescription(Constants.GSTREAMER_PIPELINE_WINDOWS_HARDWARE_HANDLE_DX12.replace("{0}", monitorNativePeer), true);
                             }
                         } else if (NativeExecutor.isLinux()) {
-                            int keepAliveTime = Math.max(1, (1000 / GStreamerGrabber.getTargetFramerate()) / 2);
+                            int keepAliveTime = 1000; //Math.max(1, (1000 / GStreamerGrabber.getTargetFramerate()) / 2);
                             String runtimeParams = finalLinuxParams.replace(Constants.PIPEWIRE_KEEPALIVE, String.valueOf(keepAliveTime));
                             bin = Gst.parseBinFromDescription(runtimeParams, true);
                         } else {
